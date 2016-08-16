@@ -4,32 +4,44 @@ package com.example.windcloudweather.model;
  * Created by liaoxiwei on 2016/8/8.
  */
 public class City {
+
     private int id;
+
     private String cityName;
+
     private String cityCode;
+
     private int provinceId;
-    public int getId(){
-       return id;
+
+    public int getId() {
+        return id;
     }
-    public void setId(int id){
+
+    public void setId(int id) {
         this.id = id;
     }
-    public String getCityName(){
+
+    public String getCityName() {
         return cityName;
     }
-    public void setCityName(String cityName){
+
+    public void setCityName(String cityName) {
         this.cityName = cityName;
     }
-    public String getCityCode(){
+
+    public String getCityCode() {
         return cityCode;
     }
-    public void setCityCode(String cityCode){
+
+    public void setCityCode(String cityCode) {
         this.cityCode = cityCode;
     }
-    public int  getProvinceId(){
+
+    public int getProvinceId() {
         return provinceId;
     }
-    public void setProvinceId(int provinceId){
+
+    public void setProvinceId(int provinceId) {
         this.provinceId = provinceId;
     }
 
