@@ -5,7 +5,7 @@
               android:layout_height="match_parent">
     <RelativeLayout android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:background="#484E61">
+                    android:background="#A9A9A9">
         <Button
                 android:id="@+id/switch_city"
                 android:layout_width="30dp"
@@ -34,13 +34,13 @@
                 />
 
 
-
     </RelativeLayout>
     <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="#27A5F9">
+            android:background="@drawable/back"
+            >
         <TextView
                 android:id="@+id/publish_text"
                 android:layout_width="wrap_content"
