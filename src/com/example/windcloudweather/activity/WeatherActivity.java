@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.example.windcloudweather.R;
+import com.example.windcloudweather.service.AutoUpdateService;
 import com.example.windcloudweather.util.HttpCallbackListener;
 import com.example.windcloudweather.util.HttpUtil;
 import com.example.windcloudweather.util.Utility;
@@ -188,6 +189,8 @@ public class WeatherActivity extends Activity implements View.OnClickListener{
         currentDateText.setText(prefs.getString("current_date", ""));
         weatherInfoLayout.setVisibility(View.VISIBLE);
         cityNameText.setVisibility(View.VISIBLE);
+        Intent intent  = new Intent(this, AutoUpdateService.class);
+        startService(intent);
 
     }
 
