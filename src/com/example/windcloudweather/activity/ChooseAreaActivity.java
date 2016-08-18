@@ -2,13 +2,17 @@ package com.example.windcloudweather.activity;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.*;
 import android.widget.AdapterView.OnItemClickListener;
 import com.example.windcloudweather.R;
@@ -64,6 +68,22 @@ public class ChooseAreaActivity extends Activity {
 	 */
 	private boolean isFromWeatherActivity;
 
+	private int getStatusBarHeight(Context context) {
+		int result = 0;
+		int resourceId = context.getResources().getIdentifier("status_bar_height", "dimen",
+				"android");
+		if (resourceId > 0) {
+			result = context.getResources().getDimensionPixelSize(resourceId);
+		}
+		return result;
+	}
+
+	protected void setImmerseLayout() {
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+			Window window = getWindow();
+			window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+		}
+	}
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -88,6 +108,10 @@ public class ChooseAreaActivity extends Activity {
 		 */
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.choose_area);
+		setImmerseLayout();
+
+
+
 		listView = (ListView) findViewById(R.id.list_view);
 		titleText = (TextView) findViewById(R.id.title_text);
 		adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, dataList);
@@ -272,6 +296,8 @@ public class ChooseAreaActivity extends Activity {
 			finish();
 		}
 	}
+
+
 
 }
 

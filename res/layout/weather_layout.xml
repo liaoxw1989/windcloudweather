@@ -2,11 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
-    <RelativeLayout android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="#A9A9A9">
+              android:layout_height="match_parent"
+              android:fitsSystemWindows="true"
+              android:clipToPadding="true"
+
+
+        >
+    <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#A9A9A9">
         <Button
+
                 android:id="@+id/switch_city"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
